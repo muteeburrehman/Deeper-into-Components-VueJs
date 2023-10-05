@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- <TheHeader /> -->
+    <the-header></the-header>
+    <badge-list></badge-list>
+    <user-info
+      :full-name="activeUser.name"
+      :info-text="activeUser.description"
+      :role="activeUser.role"
+    ></user-info>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TheHeader from './components/TheHeader.vue';
+import BadgeList from './components/BadgeList.vue';
+import UserInfo from './components/UserInfo.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components:{
+    'the-header': TheHeader,
+    'badge-list': BadgeList,
+    'user-info': UserInfo
+    //We can also define components locally in this way
+    // TheHeader: TheHeader
+    //Also write in this way
+    // TheHeader
+  },
+  data() {
+    return {
+      activeUser: {
+        name: 'Maximilian Schwarzmüller',
+        description: 'Site owner and admin',
+        role: 'admin',
+      },
+    };
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
 }
 </style>
