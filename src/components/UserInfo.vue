@@ -29,9 +29,9 @@
     padding: 1rem;
   } */
   
-  section header {
+  /* section header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+  } */
   </style>
