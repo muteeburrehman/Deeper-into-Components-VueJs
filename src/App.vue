@@ -35,7 +35,10 @@
     <active-goals v-if="selectedComponent=== 'active-goals'"></active-goals> -->
     <!-- Now we will get the same result but this time using dynamic components -->
     <!-- This compoonent does not work key alone. and require key that is ':is' -->
-    <component :is="selectedComponent"></component>
+    <keep-alive>
+      <component :is="selectedComponent"></component>
+    </keep-alive>
+   
   </div>
 </template>
 
